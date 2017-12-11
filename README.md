@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/jshannon63/jsoncollect.svg?branch=master)](https://travis-ci.org/jshannon63/jsoncollect)
-[![StyleCI](https://styleci.io/repos/104802764/shield?branch=master)](https://styleci.io/repos/104802764)
+[![StyleCI](https://styleci.io/repos/113889574/shield?branch=master)](https://styleci.io/repos/113889574)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 
-# jsoncollect - Supercharge your JSON using collections in PHP  
+# Supercharge your JSON using collections in PHP  
 
 __Framework Agnostic.__
 
