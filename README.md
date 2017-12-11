@@ -51,7 +51,7 @@ $collection->getfriends()->each(function ($item, $key) use ($mailer,$subject,$bo
 $total = $collection->getinvoices()->pluck('total')->sum();
   
 // update the sales tax rate for all Kentucky stores
-$collection->getstores()->transform(function ($item, $key) use ($rate) {
+$collection->getstores()->where('state','KY')->transform(function ($item, $key) use ($rate) {
     return $item->settaxrate($rate);
 });
 ```
