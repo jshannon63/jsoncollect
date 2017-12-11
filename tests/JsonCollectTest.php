@@ -6,7 +6,9 @@ use stdClass;
 use PHPUnit\Framework\TestCase;
 use Jshannon63\JsonCollect\JsonCollect;
 
-class foo{}
+class foo
+{
+}
 
 class JsonCollectTest extends TestCase
 {
@@ -46,16 +48,17 @@ class JsonCollectTest extends TestCase
         // newing up with json string works
         $test = new JsonCollect('{"foo": "bar", "baz": "zaz"}');
         $this->assertEquals(2, $test->count());
+    }
 
-     }
-
-    public function testBadJsonStringFails(){
+    public function testBadJsonStringFails()
+    {
         // newing up with bad string fails
         $this->expectException(\InvalidArgumentException::class);
         new JsonCollect('this is a bad string');
     }
 
-    public function testInvalidObjectInConstructorFails(){
+    public function testInvalidObjectInConstructorFails()
+    {
         //newing up with invalid object fails
         $this->expectException(\InvalidArgumentException::class);
         new JsonCollect(new foo);
@@ -77,7 +80,8 @@ class JsonCollectTest extends TestCase
         $this->assertEquals('foo', $test->search('yaz'));
     }
 
-    public function testBadMethodCall(){
+    public function testBadMethodCall()
+    {
         // verify bad method exception is thrown on unknown method
         $test = new JsonCollect($this->basic_example);
         $this->expectException(\BadMethodCallException::class);
