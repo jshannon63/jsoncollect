@@ -52,7 +52,7 @@ $total = $collection->getinvoices()->pluck('total')->sum();
   
 // update the sales tax rate for all Kentucky stores
 $collection->getstores()->transform(function ($item, $key) use ($rate) {
-    $item->settaxrate($rate);
+    return $item->settaxrate($rate);
 });
 ```
 Additionally there are custom getter and setter methods for your data. Simply call the
