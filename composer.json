@@ -1,0 +1,34 @@
+{
+  "name": "jshannon63/jsoncollect",
+  "type": "library",
+  "description": "Supercharge your JSON using collections",
+  "keywords": [
+    "collection",
+    "json",
+    "PHP"
+  ],
+  "homepage": "https://github.com/jshannon63/jsoncollect",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jim Shannon",
+      "email": "jim@hltky.com",
+      "homepage": "https://jimshannon.me/"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "tightenco/collect": "^5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jshannon63\\JsonCollect\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
+
+
