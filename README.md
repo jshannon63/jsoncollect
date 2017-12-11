@@ -39,7 +39,22 @@ $collection = new JsonCollect($json);
 
 As mentioned earlier, you should visit the Illuminate Collections documentation [here](https://laravel.com/docs/5.5/collections#available-methods) 
 for more on the *"~100 available methods"* and their usage.
-
+  
+  Some fun examples:
+```php
+// send an email to all friends
+$collection->getfriends()->each(function ($item, $key) use ($mailer,$subject,$body){
+    $mailer->sendmail($item->emailaddress,$subject,$body);
+});
+  
+// total all your invoices
+$total = $collection->getinvoices()->pluck('total')->sum();
+  
+// update the sales tax rate for all Kentucky stores
+$collection->getstores()->transform(function ($item, $key) use ($rate) {
+    $item->settaxrate($rate);
+});
+```
 Additionally there are custom getter and setter methods for your data. Simply call the
 methods get or set with the key name appended to the method name to 
 access your data directly to set or retrieve. 
