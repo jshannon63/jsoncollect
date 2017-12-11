@@ -11,7 +11,7 @@ __100% PHPUnit Test Coverage.__
   
 __Heavily dependent on [tightenco/collect](https://github.com/tightenco/collect), [Matt Stauffer's](https://twitter.com/stauffermatt) split of Laravel's Illuminate Collections.__
 
-Surround your json objects with the power of collection methods. Allowing you to 
+Surround your JSON objects with the power of collection methods. Allowing you to 
 easily traverse your data with methods like first(), last(), reduce(), search(), filter(), map(), transform(), each() and many others.
   
 See the Illuminate Collections documentation [here](https://laravel.com/docs/5.5/collections#available-methods) for more on available methods and usage.
@@ -21,7 +21,7 @@ Additionally, this package provides customized getters and setters for accessing
 ```
 composer require jshannon63/jsoncollect  
 ```
-
+if installing in the Laravel framework, JsonCollect will depend on the frameworks copy of Illuminate Collections and tightenco/collect will not be required.
 ## Usage
 
 Supply your json to the JsonCollect constructor. The form of your 
