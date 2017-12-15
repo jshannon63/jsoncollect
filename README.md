@@ -76,10 +76,10 @@ $collection['names'] = 'John Doe';
 
 $collection['address'] = new JsonCollect();
 $collection['address'] = new JsonCollect();
-$collection['address']->setstreet('street', '123 Fourth Street');
-$collection->getaddress()->setcity('city', 'Louisville');
-$collection['address']->setstate('state', 'KY');
-$collection['address']->setzip('zip', '40201');
+$collection['address']->setstreet('123 Fourth Street');
+$collection->getaddress()->setcity('Louisville');
+$collection['address']->setstate('KY');
+$collection['address']->setzip('40201');
 
 // and we can use the collection method dd() to view the contents...
 
@@ -95,13 +95,13 @@ array(2) {
     protected $items =>
     array(4) {
       'street' =>
-      string(6) "street"
+      string(6) "123 Fourth Street"
       'city' =>
-      string(4) "city"
+      string(4) "Louisville"
       'state' =>
-      string(5) "state"
+      string(5) "KY"
       'zip' =>
-      string(3) "zip"
+      string(3) "40201"
     }
   }
 }
@@ -117,10 +117,10 @@ Based on the previous example, this is what we would expect to see from our expo
 {
     "names": "John Doe",
     "address": {
-        "street": "street",
-        "city": "city",
-        "state": "state",
-        "zip": "zip"
+        "street": "123 Fourth Street",
+        "city": "Louisville",
+        "state": "KY",
+        "zip": "40201"
     }
 }
 ```
