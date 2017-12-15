@@ -131,4 +131,11 @@ class JsonCollectTest extends TestCase
 
         $this->assertContains($expectedresult, $collection->export());
     }
+
+    public function testEmptyExport()
+    {
+        $collection = new JsonCollect();
+
+        $this->assertEquals('[]', $collection->export());
+    }
 }
