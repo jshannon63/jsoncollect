@@ -16,16 +16,27 @@ class JsonCollect extends Collection
 
     private function parseItems($items)
     {
-        if ($items === null) {
-            $items = json_encode(new stdClass);
-        } elseif (is_object($items)) {
+        // if ($items === null) {
+        //     $items = json_encode(new stdClass);
+        // } elseif (is_object($items)) {
+        //     if (get_class($items) != stdClass::class) {
+        //         throw new \InvalidArgumentException('Invalid object type (' . get_class($items) . ') provided.');
+        //     }
+        // } elseif (is_string($items)) {
+        //     $items = json_decode($items);
+        //     if ($err = $this->getLastJsonError()) {
+        //         throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON: ' . $err);
+        //     }
+        // }
+
+        if (is_object($items)) {
             if (get_class($items) != stdClass::class) {
-                throw new \InvalidArgumentException('Invalid object type ('.get_class($items).') provided.');
+                throw new \InvalidArgumentException('Invalid object type (' . get_class($items) . ') provided.');
             }
         } elseif (is_string($items)) {
             $items = json_decode($items);
             if ($err = $this->getLastJsonError()) {
-                throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON'.$err);
+                throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON: ' . $err);
             }
         }
 
@@ -45,9 +56,9 @@ class JsonCollect extends Collection
         })->all();
     }
 
-    public function export()
+    public function export($options = 0)
     {
-        return $this->toJson();
+        return $this->toJson($options);
     }
 
     private function getLastJsonError()
@@ -74,7 +85,7 @@ class JsonCollect extends Collection
             $key = substr($method, 3);
             $this->put($key, $parameters[0]);
         } else {
-            throw new \BadMethodCallException(get_class($this).' is not aware of the method: '.$method.'.');
+            throw new \BadMethodCallException(get_class($this) . ' is not aware of the method: ' . $method . '.');
         }
     }
 }

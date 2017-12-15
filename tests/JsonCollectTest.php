@@ -113,4 +113,21 @@ class JsonCollectTest extends TestCase
         $test = new JsonCollect($this->big_example);
         $this->assertEquals(json_encode($this->big_example), $test->export());
     }
+
+    public function testReadmeExample()
+    {
+        $expectedresult = '{"names":"John Doe","address":{"street":"street","city":"city","state":"state","zip":"zip"}}';
+
+        $collection = new JsonCollect();
+
+        $collection['names'] = 'John Doe';
+
+        $collection['address'] = new JsonCollect();
+        $collection['address']->setstreet('street', '123 Fourth Street');
+        $collection->getaddress()->setcity('city', 'Louisville');
+        $collection['address']->setstate('state', 'KY');
+        $collection['address']->setzip('zip', '40201');
+
+        $this->assertContains($expectedresult, $collection->export());
+    }
 }
