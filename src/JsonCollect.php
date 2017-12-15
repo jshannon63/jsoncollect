@@ -31,12 +31,12 @@ class JsonCollect extends Collection
 
         if (is_object($items)) {
             if (get_class($items) != stdClass::class) {
-                throw new \InvalidArgumentException('Invalid object type (' . get_class($items) . ') provided.');
+                throw new \InvalidArgumentException('Invalid object type ('.get_class($items).') provided.');
             }
         } elseif (is_string($items)) {
             $items = json_decode($items);
             if ($err = $this->getLastJsonError()) {
-                throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON: ' . $err);
+                throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON: '.$err);
             }
         }
 
@@ -85,7 +85,7 @@ class JsonCollect extends Collection
             $key = substr($method, 3);
             $this->put($key, $parameters[0]);
         } else {
-            throw new \BadMethodCallException(get_class($this) . ' is not aware of the method: ' . $method . '.');
+            throw new \BadMethodCallException(get_class($this).' is not aware of the method: '.$method.'.');
         }
     }
 }
