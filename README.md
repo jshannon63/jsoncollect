@@ -113,7 +113,7 @@ of your collection's data. Note that export will accept the standard json_encode
 $json = $collection->export(JSON_PRETTY_PRINT);
 ```
 Based on the previous example, this is what we would expect to see from our export.
-```bash
+```json
 {
     "names": "John Doe",
     "address": {
