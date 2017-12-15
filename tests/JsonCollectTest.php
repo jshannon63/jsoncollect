@@ -123,7 +123,6 @@ class JsonCollectTest extends TestCase
         $collection['names'] = 'John Doe';
 
         $collection['address'] = new JsonCollect();
-        $collection['address'] = new JsonCollect();
         $collection['address']->setstreet('123 Fourth Street');
         $collection->getaddress()->setcity('Louisville');
         $collection['address']->setstate('KY');

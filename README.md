@@ -13,7 +13,7 @@ __100% PHPUnit Test Coverage.__
   
 __Heavily dependent on [tightenco/collect](https://github.com/tightenco/collect), [Matt Stauffer's](https://twitter.com/stauffermatt) split of Laravel's Illuminate Collections.__
 
-See the Illuminate Collections documentation [here](https://laravel.com/docs/5.5/collections#available-methods) for more on available methods and usage.
+See the Laravel documentation [here](https://laravel.com/docs/5.5/collections#available-methods) for more on available methods and usage.
   
 Additionally, this package provides customized getters and setters for accessing keyed data elements. Described in more detail below.
 ## Installation
@@ -46,7 +46,7 @@ $collection->getname();
 $collection->setphone('123-456-7890');  
 ```
 
-As mentioned earlier, you should visit the Illuminate Collections documentation [here](https://laravel.com/docs/5.5/collections#available-methods) 
+As mentioned earlier, you should visit the Laravel documentation [here](https://laravel.com/docs/5.5/collections#available-methods) 
 for more on the *"~100 available methods"* and their usage.
   
   Some fun examples:
@@ -74,7 +74,6 @@ $collection['names'] = 'John Doe';
 
 // or if you have multi-level data, you may add another JsonCollect
 
-$collection['address'] = new JsonCollect();
 $collection['address'] = new JsonCollect();
 $collection['address']->setstreet('123 Fourth Street');
 $collection->getaddress()->setcity('Louisville');
