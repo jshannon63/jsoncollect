@@ -7,21 +7,21 @@ use Illuminate\Support\Collection;
 
 class JsonCollect extends Collection
 {
-    public function __construct($items = null)
+    public function __construct($items = null, $depth = 512)
     {
-        parent::__construct($this->parseItems($items));
+        parent::__construct($this->parseItems($items, $depth));
 
         $this->resolve($this);
     }
 
-    private function parseItems($items)
+    private function parseItems($items, $depth)
     {
         if (is_object($items)) {
             if (get_class($items) != stdClass::class) {
                 throw new \InvalidArgumentException('Invalid object type ('.get_class($items).') provided.');
             }
         } elseif (is_string($items)) {
-            $items = json_decode($items);
+            $items = json_decode($items, false, $depth);
             if ($err = $this->getLastJsonError()) {
                 throw new \InvalidArgumentException('Provided string cannot be evaluated as JSON: '.$err);
             }
