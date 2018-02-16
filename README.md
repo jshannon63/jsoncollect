@@ -5,7 +5,7 @@
 
 # Supercharge your JSON using collections in PHP  
 
-The JsonCollect package allows you to surround your JSON objects with the power of collection methods. Making it easy to traverse your data with methods like first(), last(), reduce(), search(), filter(), map(), transform(), each() and many others.
+The JsonCollect package allows you to surround your JSON objects with the power of collection methods. Making it easy to traverse your data with methods like each(), pluck(), where(), tap(), reduce(), search(), filter(), map(), transform() and many others.
 
 __Framework Agnostic.__
 
@@ -34,6 +34,8 @@ use Jshannon63\JsonCollect\JsonCollect;
  
 $collection = new JsonCollect($json);  
 ```
+Note: You can set the recursion depth of JsonCollect by supplying the optional second constructor argument $depth. Default value is 512.
+
 ### Working with your JSON collection
 
 JsonCollect provides custom getter and setter methods for your data. Simply call the methods "get" or "set" with the key name appended to the method name to access your data directly to retrieve or to create/update. 
